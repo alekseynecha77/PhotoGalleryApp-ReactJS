@@ -8,14 +8,14 @@ export default class App extends Component {
   constructor() {
     super();
     this.state ={
-      gifs: []
+      photos: []
     };
   } 
   componentDidMount(){
-    axios.get(`https://giphy.com/gifs/studiosoriginals-goth-gothidays-sLS02WCn8URxikZiCJ`)
+    axios.get('https://api.giphy.com/v1/gifs/trending?api_key=2AZXqjzwqcIcMvRdVBY70bUBdZbTvhSp&limit=9&rating=pg')
     .then(response => {
       this.setState({
-        gifs: response.data.data
+        photos: response.data.data
 
       });
     })
@@ -25,7 +25,7 @@ export default class App extends Component {
   }
 
   render() { 
-    console.log(this.state.gifs);
+    console.log(this.state.photos);
     return (
       <div>
         <div className="main-header">
@@ -35,7 +35,7 @@ export default class App extends Component {
           </div>   
         </div>    
         <div className="main-content">
-          <Photolist data={this.state.gifs} />
+          <Photolist data={this.state.photos} />
         </div>
       </div>
     );

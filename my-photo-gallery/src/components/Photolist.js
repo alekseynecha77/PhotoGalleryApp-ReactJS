@@ -3,12 +3,12 @@ import Photo from './Photo';
 
 const Photolist = props => { 
   const results = props.data;
-  let gifs = results.map(gif=>
-    <Photo url={gif.images.fixed_height.url} key={gif.id} />
+  let photos = results.map(photo=>
+    <Photo url={photo.images.fixed_height.url} key={photo.id} />
     );
   return(
     <ul className="photo-list">
-     {gifs}
+     {photos}
     </ul> 
   );
 }
