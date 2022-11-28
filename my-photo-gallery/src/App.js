@@ -12,10 +12,10 @@ export default class App extends Component {
     };
   } 
   componentDidMount(){
-    axios.get('http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC')
+    axios.get(`https://giphy.com/gifs/studiosoriginals-goth-gothidays-sLS02WCn8URxikZiCJ`)
     .then(response => {
       this.setState({
-        gifs: response.data
+        gifs: response.data.data
 
       });
     })
@@ -25,7 +25,7 @@ export default class App extends Component {
   }
 
   render() { 
-    console.log(this.state.gifs);
+    console.log(this.state.images);
     return (
       <div>
         <div className="main-header">
