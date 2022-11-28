@@ -1,2 +1,2 @@
-# PhotoGalleryApp-ReactJS
+# PhotoGallery-ReactJS
  
