@@ -1,29 +1,31 @@
 import React, {Component} from 'react';
-import Navbar from './components/Navbar';
 import './styles.css';
 import Photolist from './components/Photolist';
-import SearchForm from './components/SearchForm'
+import SearchForm from './components/SearchForm';
+import axios from 'axios';
 
 export default class App extends Component {
   constructor() {
     super();
     this.state ={
-      photos: []
+      gifs: []
     };
   } 
   componentDidMount(){
-    fetch('http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC')
-      .then(response => response.json())
-      .then(responseData =>{
-        this.setState({photos: responseData.data});
-      })
-      .catch(error =>{
-        console.log('error fetching', error)
-      })
+    axios.get('http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC')
+    .then(response => {
+      this.setState({
+        gifs: response.data
+
+      });
+    })
+    .catch(error => {
+      console.log('Error fetching and parsing data', error);
+    });
   }
 
   render() { 
-    console.log(this.state.photos);
+    console.log(this.state.gifs);
     return (
       <div>
         <div className="main-header">
@@ -33,8 +35,7 @@ export default class App extends Component {
           </div>   
         </div>    
         <div className="main-content">
-          <Photolist />
-          <Navbar />
+          <Photolist data={this.state.gifs} />
         </div>
       </div>
     );
