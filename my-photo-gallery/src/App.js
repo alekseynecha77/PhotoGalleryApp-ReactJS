@@ -12,7 +12,7 @@ export default class App extends Component {
     };
   } 
   componentDidMount(){
-    axios.get('https://api.giphy.com/v1/gifs/trending?api_key=2AZXqjzwqcIcMvRdVBY70bUBdZbTvhSp&limit=9&rating=pg')
+    axios.get('https://api.giphy.com/v1/gifs/trending?api_key=2AZXqjzwqcIcMvRdVBY70bUBdZbTvhSp&limit=12&rating=pg')
     .then(response => {
       this.setState({
         photos: response.data.data

@@ -87,7 +87,7 @@ input {
   background-color: #275270;
 }
 
-.photo-container ul {
+.photo-list ul {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -95,20 +95,20 @@ input {
   align-items: flex-start;
 }
 
-.photo-container ul li {
+.photo-wrap li {
   width: 220px;
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
 }
 
-.photo-container ul img {
+.photo-list ul img {
   width: 100%;
   transform: scale(1.25);
   transition: transform 1.25s;
 }
 
-.photo-container li:hover img {
+.photo-wrap li:hover img {
   transform: scale(1.65);
 }
 
@@ -121,7 +121,7 @@ input {
     padding-top: 2em;
   }
 
-  .photo-container li {
+  .photo-wrap li {
     margin: auto;
   }
 }
