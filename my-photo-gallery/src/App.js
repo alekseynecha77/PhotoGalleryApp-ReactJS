@@ -1,10 +1,10 @@
-import React, {components} from 'react';
+import React, {Component} from 'react';
 import Navbar from './components/Navbar';
 import './styles.css';
 import Photolist from './components/Photolist';
 import SearchForm from './components/SearchForm'
 
-export default class App extends components {
+export default class App extends Component {
   constructor() {
     super();
     this.state ={

@@ -1,6 +1,6 @@
-import React, { components } from 'react';
+import React, { Component } from 'react';
 
-export default class SearchForm extends components {
+export default class SearchForm extends Component {
   
   state = {
     searchText: ''
